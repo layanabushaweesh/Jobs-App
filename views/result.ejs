@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./layout/head.ejs') %>
+   
+
+    <%- include ('./layout/nav.ejs') %>
+</head>
+<body>
+    <section>
+        <%allData.forEach(data =>{%>
+         <h2>
+<%=data.title%>
+
+         </h2> 
+         <h3>
+            <%=data.company%>  
+         </h3>
+<h4>
+<%=data.location%>   
+</h4>
+<h5>
+<%=data.url%>  
+</h5>
+
+<form action="/save" method="POST">
+    <input type="hidden" name="title" value="<%=data.title%>">
+    <input type="hidden" name="company" value="<%=data.company%>">
+    <input type="hidden" name="location" value="<%=data.location%>">
+    <input type="hidden" name="url" value="<%=data.url%>">
+<input type="submit" value="add favorite">
+</form>
+
+    <%    })%>
+    </section>
+</main>
+</body>
+</html>

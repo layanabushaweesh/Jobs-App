@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./layout/head.ejs') %>
+   
+
+<%- include ('./layout/nav.ejs') %>
+</head>
+<body>
+    <main>
+        <section>
+            <%favData.forEach(data =>{%>
+             <h2>
+<%=data.title%>
+
+             </h2> 
+             <h3>
+                <%=data.company%>  
+             </h3>
+<h4>
+    <%=data.location%>   
+</h4>
+<h5>
+    <%=data.url%>  
+</h5>
+<form action="/detalis/<%=data.id%>" method="POST">
+    <input type="submit" value="view detalis">
+</form>
+        <%    })%>
+        </section>
+</body>
+</html>

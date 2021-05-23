@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./layout/head.ejs') %>
+   
+
+    <%- include ('./layout/nav.ejs') %>
+</head>
+<body>
+    <main>
+        <section>
+            <%detalis.forEach(data =>{%>
+             <h2>
+<%=data.title%>
+
+             </h2> 
+             <h3>
+                <%=data.company%>  
+             </h3>
+<h4>
+    <%=data.location%>   
+</h4>
+<h5>
+    <%=data.url%>  
+</h5>
+<form action="/detalis/<%=data.id%>?_method=put" method="POST">
+</form>
+<input type="text" name="title" value="<%=data.title%>">
+<input type="text" name="company" value="<%=data.company%>">
+<input type="text" name="location" value="<%=data.location%>">
+<input type="text" name="ul" value="<%=data.url%>">
+
+<input type="submit" value="update">
+
+<form action="/detalis/<%=data.id%>?_method=delete" method="POST">
+    <input type="submit" value="delete">
+</form>
+        <%    })%>
+        </section>
+    </main>
+</body>
+</html>

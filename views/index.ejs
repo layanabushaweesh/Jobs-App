@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./layout/head.ejs') %>
+   
+
+<%- include ('./layout/nav.ejs') %>
+
+<body>
+    <main>
+        <section>
+            <%allData.forEach(data =>{%>
+             <h2>
+<%=data.title%>
+
+             </h2> 
+             <h3>
+                <%=data.company%>  
+             </h3>
+<h4>
+    <%=data.location%>   
+</h4>
+<h5>
+    <%=data.url%>  
+</h5>
+
+        <%    })%>
+        </section>
+    </main>
+</body>
+</html>
